@@ -1,0 +1,93 @@
+.box{
+    width: 360px;
+    height: 50px;
+    background-color: #000103;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.active{
+    -webkit-app-region: drag;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.title{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.ing {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.time{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 180px;
+    margin: 0 10px;
+    background-color: #1F1F1F;
+    cursor: pointer;
+}
+.my-button{
+    margin: 10px 0;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.my-button:hover{
+    background-color: #000103;
+}
+
+.button-one{
+    background-image: url("./img/1.png");
+}
+
+.button-two{
+    background-image: url("./img/2.png");
+}
+
+.button-three{
+    background-image: url("./img/3.png");
+}
+
+.menu{
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-image: url("./img/5.png");
+    padding-right: 20px;
+}

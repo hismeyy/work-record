@@ -1,0 +1,43 @@
+{
+  "name": "work-record",
+  "version": "1.0.0",
+  "description": "这是一个虚拟录制软件",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "MaxCosmos",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.0.1",
+    "electron-builder": "^24.12.0",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "com.example.record",
+    "productName": "record",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "img/**/*",
+      "favicon.ico",
+      "**/*"
+    ],
+    "win": {
+      "target": {
+        "target": "portable",
+        "arch": [
+          "x64"
+        ]
+      },
+      "icon": "./favicon.ico"
+    },
+    "portable": {
+      "artifactName": "${productName}-portable-${version}.${ext}"
+    }
+  }
+}

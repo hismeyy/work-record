@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>屏幕录制</title>
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div class="box">
+    <div class="active">
+        <div class="title">
+            <div class="ing"></div>
+            <div class="name" style="width: 50px">未录制</div>
+        </div>
+        <div class="time">
+            00:00
+        </div>
+    </div>
+    <div class="button">
+        <div class="my-button button-one"></div>
+        <div class="my-button button-two"></div>
+        <div class="my-button button-three"></div>
+    </div>
+    <div class="menu"></div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const nameEl = document.querySelector('.name');
+        const ingEl = document.querySelector('.ing');
+        const timeEl = document.querySelector('.time');
+        const buttonEl = document.querySelector('.button-three');
+
+        let isRecording = false;
+        let intervalId = null;
+        let seconds = 0;
+
+        // 更新时间显示
+        function updateTime() {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            timeEl.textContent = `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // 开始录制
+        function startRecording() {
+            if (!isRecording) {
+                isRecording = true;
+                nameEl.textContent = '录制中';
+                seconds = 0;
+                updateTime();
+                let isLighter = false; // 用于切换颜色
+                intervalId = setInterval(function() {
+                    seconds++;
+                    updateTime();
+                    if (isLighter) {
+                        ingEl.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
+                        isLighter = false;
+                    } else {
+                        ingEl.style.backgroundColor = 'red';
+                        isLighter = true;
+                    }
+                }, 1000);
+                // 获取.button-three的当前背景图片
+                const currentBgImage = window.getComputedStyle(buttonEl).backgroundImage;
+
+                buttonEl.style.backgroundImage = 'url("./img/4.png")';
+            }else {
+                clearInterval(intervalId);
+                isRecording = false;
+                nameEl.textContent = '未录制';
+                seconds = 0;
+                updateTime();
+                buttonEl.style.backgroundImage = 'url("./img/3.png")';
+                ingEl.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
+            }
+        }
+
+        // 为按钮绑定事件
+        buttonEl.addEventListener('click', startRecording);
+    });
+
+</script>
+</body>
+</html>
