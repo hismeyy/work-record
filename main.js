@@ -3,7 +3,7 @@ const path = require('node:path')
 
 let mainWindow;
 let tray = null;
-let autoStartEnabled = true; // 默认自动启动
+let autoStartEnabled = false; // 默认自动启动
 
 // 创建窗口函数
 const createWindow = () => {
