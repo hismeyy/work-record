@@ -1,6 +1,6 @@
 .box{
-    width: 360px;
-    height: 50px;
+    width: 180px;
+    height: 100vh;
     background-color: #000103;
     display: flex;
     justify-content: left;
@@ -21,19 +21,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
+    margin: 5px;
 }
 
 .ing {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     background-color: rgba(255, 0, 0, 0.5);
     border-radius: 50%;
+    margin-left: 10px;
     margin-right: 10px;
 }
 
 .time{
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -41,19 +42,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 100%;
     width: 180px;
-    margin: 0 10px;
     background-color: #1F1F1F;
     cursor: pointer;
 }
 .my-button{
-    margin: 10px 0;
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,8 +80,8 @@
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,4 +89,5 @@
     cursor: pointer;
     background-image: url("./img/5.png");
     padding-right: 20px;
+    margin-right: 5px;
 }

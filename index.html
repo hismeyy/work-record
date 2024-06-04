@@ -13,14 +13,11 @@
             <div class="ing"></div>
             <div class="name" style="width: 50px">未录制</div>
         </div>
-        <div class="time">
-            00:00
-        </div>
     </div>
     <div class="button">
         <div class="my-button button-one"></div>
         <div class="my-button button-two"></div>
-        <div class="my-button button-three"></div>
+<!--        <div class="my-button button-three"></div>-->
     </div>
     <div class="menu"></div>
 </div>
@@ -28,7 +25,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         const nameEl = document.querySelector('.name');
         const ingEl = document.querySelector('.ing');
-        const timeEl = document.querySelector('.time');
+        // const timeEl = document.querySelector('.time');
         const buttonEl = document.querySelector('.button-three');
 
         let isRecording = false;
@@ -36,23 +33,23 @@
         let seconds = 0;
 
         // 更新时间显示
-        function updateTime() {
-            const minutes = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            timeEl.textContent = `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        }
+        // function updateTime() {
+        //     const minutes = Math.floor(seconds / 60);
+        //     const secs = seconds % 60;
+        //     timeEl.textContent = `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        // }
 
         // 开始录制
         function startRecording() {
             if (!isRecording) {
                 isRecording = true;
                 nameEl.textContent = '录制中';
-                seconds = 0;
-                updateTime();
+                // seconds = 0;
+                // updateTime();
                 let isLighter = false; // 用于切换颜色
                 intervalId = setInterval(function() {
-                    seconds++;
-                    updateTime();
+                    // seconds++;
+                    // updateTime();
                     if (isLighter) {
                         ingEl.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
                         isLighter = false;
@@ -77,7 +74,7 @@
         }
 
         // 为按钮绑定事件
-        buttonEl.addEventListener('click', startRecording);
+        // buttonEl.addEventListener('click', startRecording);
         startRecording()
     });
 
